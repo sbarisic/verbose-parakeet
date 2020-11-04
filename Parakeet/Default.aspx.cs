@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,8 +10,8 @@ using Parakeet.Code;
 namespace Parakeet {
 	public partial class _Default : Page {
 		protected void Page_Load(object sender, EventArgs e) {
+			ParakeetUser Admin = ParakeetDb.Select<ParakeetUser>(new DbFilter("Username", "admin")).First();
 
-			ParakeetUser Usr = ParakeetDb.SelectByID<ParakeetUser>(0);
 
 		}
 	}

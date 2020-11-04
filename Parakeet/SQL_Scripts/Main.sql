@@ -1,12 +1,12 @@
 ﻿create table ParakeetUser (
-	ID INT PRIMARY KEY,
+	ID INT IDENTITY PRIMARY KEY ,
 	Username VARCHAR(256) NOT NULL UNIQUE,
 	Salt VARCHAR(512),
 	Hash VARCHAR(512)
 );
 
 create table ContentID (
-	ID INT PRIMARY KEY,
+	ID INT IDENTITY PRIMARY KEY,
 	OwnerID INT,							-- Content owner ID, linked to table ParakeetUser
 
 	Name VARCHAR(256),						-- Content name
@@ -15,4 +15,4 @@ create table ContentID (
 	FileName VARCHAR(512)
 );
 
-
+select * from ContentID;
