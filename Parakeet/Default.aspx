@@ -1,16 +1,19 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Parakeet._Default" %>
 
+<%@ Register Src="~/Controls/ContentPreview.ascx" TagName="ContentPreview" TagPrefix="uc" %>
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 	<div class="row">
-		<div class="col-md-4">
-			<asp:Image CssClass="img-thumbnail thumb-image" ID="imgTest" ImageUrl="~/Content/Images/missing.png" runat="server" />
 
-			<p>
-				Image Title
-			</p>
-		</div>
+		<asp:Repeater ID="rptImages" runat="server">
+			<ItemTemplate>
+				<div class="col-sm-2">
+					<uc:ContentPreview Name='<%# Eval("Name") %>' FilePath='<%# Eval("FilePath") %>' runat="server" />
+				</div>
+			</ItemTemplate>
+		</asp:Repeater>
 
-		<div class="col-md-4">
+		<%--		<div class="col-sm-4">
 			<h2>Get more libraries</h2>
 			<p>
 				NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
@@ -20,7 +23,7 @@
 			</p>
 		</div>
 
-		<div class="col-md-4">
+		<div class="col-sm-4">
 			<h2>Web Hosting</h2>
 			<p>
 				You can easily find a web hosting company that offers the right mix of features and price for your applications.
@@ -30,7 +33,7 @@
 			</p>
 		</div>
 
-				<div class="col-md-4">
+		<div class="col-sm-4">
 			<h2>Web Hosting</h2>
 			<p>
 				You can easily find a web hosting company that offers the right mix of features and price for your applications.
@@ -40,7 +43,7 @@
 			</p>
 		</div>
 
-				<div class="col-md-4">
+		<div class="col-sm-4">
 			<h2>Web Hosting</h2>
 			<p>
 				You can easily find a web hosting company that offers the right mix of features and price for your applications.
@@ -48,17 +51,17 @@
 			<p>
 				<a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
 			</p>
-		</div>
+		</div>--%>
 
-				<div class="col-md-4">
-			<h2>Web Hosting</h2>
-			<p>
-				You can easily find a web hosting company that offers the right mix of features and price for your applications.
-			</p>
-			<p>
-				<a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-			</p>
-		</div>
+		<%--		<div class="col-md-4">
+			<div id="container">
+				<video id="player" class="videoplayer" controls="controls" crossorigin="crossorigin" playsinline="playsinline" data-poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg">
+					<source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4" size="576" />
+					<track kind="captions" label="English" srclang="en" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt" default />
+					<a href="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" download="download">Download</a>
+				</video>
+			</div>
+		</div>--%>
 	</div>
 
 </asp:Content>

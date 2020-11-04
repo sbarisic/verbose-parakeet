@@ -69,7 +69,7 @@ namespace Parakeet.Code {
 		static object GetReaderValue(SqlDataReader Reader, int Ordinal, Type T) {
 			if (T.IsEnum) {
 				int EnumVal = Reader.GetInt32(Ordinal);
-				object Val = Convert.ChangeType(EnumVal, T);
+				object Val = Utils.ToEnum(EnumVal, T);
 				return Val;
 			} else if (T == typeof(int))
 				return Reader.GetInt32(Ordinal);
