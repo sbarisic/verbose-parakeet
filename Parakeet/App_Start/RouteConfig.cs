@@ -10,9 +10,9 @@ namespace Parakeet
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            var settings = new FriendlyUrlSettings();
-            settings.AutoRedirectMode = RedirectMode.Permanent;
-            routes.EnableFriendlyUrls(settings);
+            var Settings = new FriendlyUrlSettings();
+            Settings.AutoRedirectMode = RedirectMode.Off;
+            routes.EnableFriendlyUrls(Settings);
         }
     }
 }

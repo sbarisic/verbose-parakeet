@@ -13,6 +13,15 @@ namespace Parakeet {
 	public partial class SiteMaster {
 
 		/// <summary>
+		/// ulNavbarItems control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.HtmlControls.HtmlGenericControl ulNavbarItems;
+
+		/// <summary>
 		/// MainContent control.
 		/// </summary>
 		/// <remarks>

@@ -182,7 +182,11 @@
     <Compile Include="Code\CustomAttributes.cs" />
     <Compile Include="Code\Database.cs" />
     <Compile Include="Code\Files.cs" />
+    <Compile Include="Code\ParakeetPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Code\Utils.cs" />
+    <Compile Include="Code\PkControls.cs" />
     <Compile Include="Controls\ContentPreview.ascx.cs">
       <DependentUpon>ContentPreview.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

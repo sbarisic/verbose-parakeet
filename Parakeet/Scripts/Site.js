@@ -8,3 +8,15 @@ $(document).ready(function () {
 
 	$('[data-toggle="tooltip"]').tooltip();
 });
+
+function PageMethodSuccess(res, ctx) {
+	console.log("Page method success!" + res);
+
+	if (typeof ctx === "function") {
+		ctx(res);
+	}
+}
+
+function PageMethodError(res) {
+	console.log("Page method error!" + res);
+}
