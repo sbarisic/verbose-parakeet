@@ -11,6 +11,27 @@ using System.Web.SessionState;
 
 namespace Parakeet.Code {
 	public class ParakeetPage : Page {
+		ParakeetUser PkUser;
+
+		public ParakeetUser GetUser() {
+			return Session[nameof(ParakeetUser)] as ParakeetUser;
+		}
+
+		public void SetUser(ParakeetUser User) {
+			Session[nameof(ParakeetUser)] = User;
+		}
+
+		public bool CheckLoggedIn() {
+			ParakeetUser U = GetUser();
+
+			if (U != null) {
+				PkUser = U;
+				return true;
+			}
+
+			return false;
+		}
+
 		public void Download(string FileName, byte[] Data) {
 			Response.ContentType = "application/force-download";
 			Response.AppendHeader("Content-Disposition", "attachment;filename=" + FileName);

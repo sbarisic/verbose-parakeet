@@ -12,6 +12,8 @@ using Parakeet.Code;
 
 namespace Parakeet {
 	public partial class _Default : ParakeetPage {
+
+
 		protected void Page_Load(object sender, EventArgs e) {
 			ParakeetUser Admin = ParakeetDb.Select<ParakeetUser>(new DbFilter("Username", "admin")).First();
 
@@ -23,39 +25,6 @@ namespace Parakeet {
 
 			rptImages.DataSource = Items;
 			rptImages.DataBind();
-		}
-
-		public override IEnumerable<PkControl> GenerateWebControls() {
-			yield return new PkButton("Hello World!", PkButtonStyle.Light, (S, E) => {
-				Debug.WriteLine("Hello World!");
-			});
-
-			yield return PkCustomControl.MarginLeft(2);
-			yield return new PkButton("Append Button", PkButtonStyle.Light, new PkWebMethod(nameof(AppendButton), @" function(ret) { $('#new_here').empty(); $('#new_here').append($(ret)); }"));
-
-
-			PkCustomControl ListItem = PkCustomControl.ListItem("nav-item");
-			ListItem.ID = "new_here";
-
-			yield return PkCustomControl.MarginLeft(2);
-			yield return ListItem;
-
-			yield return PkCustomControl.MarginLeft(2);
-			yield return new PkButton("Crappy button!", PkButtonStyle.Secondary, (S, E) => {
-				Debug.WriteLine("Hello World!");
-			});
-		}
-
-		static int Counter = 0;
-
-		[WebMethod]
-		public static string AppendButton() {
-			return new PkButton("Button #" + (Counter++).ToString(), PkButtonStyle.Success, new PkWebMethod(nameof(WriteHueHue))).ToHTML();
-		}
-
-		[WebMethod]
-		public static void WriteHueHue() {
-			Debug.WriteLine("Hue hue hue!");
 		}
 	}
 

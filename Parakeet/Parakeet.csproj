@@ -127,6 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Images\missing.png" />
+    <Content Include="Content\Images\wallpaper.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Controls\ContentPreview.ascx" />
     <Content Include="DataFolder\Image\airplane.png" />
@@ -142,6 +143,10 @@
     <Content Include="DataFolder\Image\sails.png" />
     <Content Include="DataFolder\Image\serrano.png" />
     <Content Include="DataFolder\Image\tulips.png" />
+    <Content Include="Register.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="UploadContent.aspx" />
+    <Content Include="Profile.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -193,6 +198,34 @@
     </Compile>
     <Compile Include="Controls\ContentPreview.ascx.designer.cs">
       <DependentUpon>ContentPreview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UploadContent.aspx.cs">
+      <DependentUpon>UploadContent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UploadContent.aspx.designer.cs">
+      <DependentUpon>UploadContent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

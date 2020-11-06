@@ -77,6 +77,10 @@ namespace Parakeet.Code {
 			return Generate();
 		}
 
+		public static PkCustomControl Div(string CssClass) {
+			return new PkCustomControl("div", CssClass);
+		}
+
 		public static PkCustomControl MarginLeft(int Val) {
 			return new PkCustomControl("div", "ml-" + Val.ToString());
 		}
@@ -243,6 +247,56 @@ namespace Parakeet.Code {
 
 			Li.AddControl(Div);
 			return Li.Generate();
+		}
+
+		public override HtmlControl GenerateNavbar() {
+			return Generate();
+		}
+	}
+
+	public enum PkInputType {
+		Text
+	}
+
+	public class PkInput : PkControl {
+		public string Name;
+
+		public PkInputType InputType;
+		public string CssClass;
+		public string Placeholder;
+
+		public PkInput(string Name, PkInputType InputType, string CssClass) {
+			this.Name = Name;
+			this.InputType = InputType;
+			this.CssClass = CssClass;
+		}
+
+		public override HtmlControl Generate() {
+			HtmlInputControl Input = null;
+
+			switch (InputType) {
+				case PkInputType.Text: {
+						Input = new HtmlInputText();
+						break;
+					}
+
+				default:
+					throw new NotImplementedException();
+			}
+
+			Input.Name = Name;
+			Input.Attributes["class"] = CssClass;
+			Input.Attributes["name"] = Name;
+
+			if (!string.IsNullOrEmpty(Placeholder)) {
+				Input.Attributes["placeholder"] = Placeholder;
+			}
+
+			return Input;
+		}
+
+		public string GetValue(ParakeetPage Page) {
+			return Page.Request.Form[Name];
 		}
 
 		public override HtmlControl GenerateNavbar() {
