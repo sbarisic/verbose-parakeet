@@ -9,11 +9,6 @@
 				<div class="card">
 					<div class="card-header">
 						<h3>Sign In</h3>
-						<%--						<div class="d-flex justify-content-end social_icon">
-							<span><i class="fab fa-facebook-square"></i></span>
-							<span><i class="fab fa-google-plus-square"></i></span>
-							<span><i class="fab fa-twitter-square"></i></span>
-						</div>--%>
 					</div>
 
 					<div id="divCardBody" class="card-body" runat="server">
@@ -22,7 +17,6 @@
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
 
-							<%--<input type="text" class="form-control" placeholder="username">--%>
 							<asp:TextBox ID="tbUsername" CssClass="form-control" placeholder="username" type="text" runat="server"></asp:TextBox>
 						</div>
 
@@ -31,12 +25,10 @@
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
 
-							<%--<input type="password" class="form-control" placeholder="password">--%>
 							<asp:TextBox ID="tbPassword" CssClass="form-control" placeholder="password" type="password" runat="server"></asp:TextBox>
 						</div>
 
 						<div class="row align-items-center remember">
-							<%--<input type="checkbox" />Remember Me--%>
 							<asp:CheckBox ID="cbRememberMe" runat="server" Text="Remember Me" />
 						</div>
 

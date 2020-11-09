@@ -190,6 +190,7 @@
     <Compile Include="Code\ParakeetPage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Code\PasswordManager.cs" />
     <Compile Include="Code\Utils.cs" />
     <Compile Include="Code\PkControls.cs" />
     <Compile Include="Controls\ContentPreview.ascx.cs">
