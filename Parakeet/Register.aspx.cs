@@ -20,15 +20,8 @@ namespace Parakeet {
 
 		}
 
-		/*public override IEnumerable<PkControl> GenerateWebControls() {
-			yield return new PkButton("Main Page", PkButtonStyle.Light, (S, E) => {
-				
-			});
+		protected void btnRegister_Click(object sender, EventArgs e) {
 
-			yield return PkCustomControl.MarginLeft(2);
-			yield return new PkButton("View Profile", PkButtonStyle.Light, (S, E) => {
-			
-			});
-		}*/
+		}
 	}
 }

@@ -1,58 +1,46 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Parakeet.Register"  %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Parakeet.Register" %>
 
 <%@ Register Src="~/Controls/ContentPreview.ascx" TagName="ContentPreview" TagPrefix="uc" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-	<div class="row">
+	<div class="popup">
+		<div class="container">
+			<div class="d-flex justify-content-center h-100">
+				<div class="card">
+					<div class="card-header">
+						<h3>Register</h3>
+					</div>
 
-		<%--		<div class="col-sm-4">
-			<h2>Get more libraries</h2>
-			<p>
-				NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-			</p>
-			<p>
-				<a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-			</p>
-		</div>
+					<div id="divCardBody" class="card-body" runat="server">
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
 
-		<div class="col-sm-4">
-			<h2>Web Hosting</h2>
-			<p>
-				You can easily find a web hosting company that offers the right mix of features and price for your applications.
-			</p>
-			<p>
-				<a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-			</p>
-		</div>
+							<asp:TextBox ID="tbUsername" CssClass="form-control" placeholder="username" type="text" runat="server"></asp:TextBox>
+						</div>
 
-		<div class="col-sm-4">
-			<h2>Web Hosting</h2>
-			<p>
-				You can easily find a web hosting company that offers the right mix of features and price for your applications.
-			</p>
-			<p>
-				<a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-			</p>
-		</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
 
-		<div class="col-sm-4">
-			<h2>Web Hosting</h2>
-			<p>
-				You can easily find a web hosting company that offers the right mix of features and price for your applications.
-			</p>
-			<p>
-				<a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-			</p>
-		</div>--%>
+							<asp:TextBox ID="tbPassword" CssClass="form-control" placeholder="password" type="password" runat="server"></asp:TextBox>
+						</div>
 
-		<%--		<div class="col-md-4">
-			<div id="container">
-				<video id="player" class="videoplayer" controls="controls" crossorigin="crossorigin" playsinline="playsinline" data-poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg">
-					<source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4" size="576" />
-					<track kind="captions" label="English" srclang="en" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt" default />
-					<a href="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" download="download">Download</a>
-				</video>
+						<div class="row align-items-center remember">
+							<asp:CheckBox ID="cbRememberMe" runat="server" Text="Remember Me" />
+						</div>
+
+					</div>
+
+					<div class="card-footer">
+						<div class="form-group">
+							<asp:Button ID="btnRegister" CssClass="btn float-right login_btn" runat="server" Text="Register" OnClick="btnRegister_Click" />
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>--%>
+		</div>
 	</div>
 </asp:Content>

@@ -8,7 +8,7 @@
 			<div class="d-flex justify-content-center h-100">
 				<div class="card">
 					<div class="card-header">
-						<h3>Sign In</h3>
+						<h3>Login</h3>
 					</div>
 
 					<div id="divCardBody" class="card-body" runat="server">
@@ -31,13 +31,13 @@
 						<div class="row align-items-center remember">
 							<asp:CheckBox ID="cbRememberMe" runat="server" Text="Remember Me" />
 						</div>
-
-						<div class="form-group">
-							<asp:Button ID="btnLogin" CssClass="btn float-right login_btn" runat="server" Text="Login" OnClick="btnLogin_Click" />
-						</div>
 					</div>
 
 					<div class="card-footer">
+						<div class="form-group">
+							<asp:Button ID="btnLogin" CssClass="btn float-right login_btn" runat="server" Text="Login" OnClick="btnLogin_Click" />
+						</div>
+
 						<div class="d-flex justify-content-center links">
 							Don't have an account?<a href="Register.aspx">Register</a>
 						</div>
