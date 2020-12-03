@@ -17,7 +17,7 @@
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
 
-							<asp:TextBox ID="tbUsername" CssClass="form-control" placeholder="username" type="text" runat="server"></asp:TextBox>
+							<asp:TextBox ID="tbUsername" CssClass="form-control" placeholder="Username" type="text" runat="server"></asp:TextBox>
 						</div>
 
 						<div class="input-group form-group">
@@ -25,7 +25,15 @@
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
 
-							<asp:TextBox ID="tbPassword" CssClass="form-control" placeholder="password" type="password" runat="server"></asp:TextBox>
+							<asp:TextBox ID="tbPassword" CssClass="form-control" placeholder="Password" type="password" runat="server"></asp:TextBox>
+						</div>
+
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+
+							<asp:TextBox ID="tbPassword2" CssClass="form-control" placeholder="Repeat Password" type="password" runat="server"></asp:TextBox>
 						</div>
 
 						<div class="row align-items-center remember">
