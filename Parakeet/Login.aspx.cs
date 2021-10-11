@@ -23,6 +23,20 @@ namespace Parakeet {
 			string Username = tbUsername.Text;
 			string Password = tbPassword.Text;
 			bool RememberMe = cbRememberMe.Checked;
+
+			ParakeetUser Usr = ParakeetDb.Select<ParakeetUser>(new DbFilter("Username", Username)).First();
+			bool Valid = Usr != null;
+
+			if (Valid && PasswordManager.IsValidPassword(Password, Usr.Salt, Usr.Hash)) {
+				Valid = true;
+			} else
+				Valid = false;
+
+			if (!Valid)
+				throw new Exception("User or password invalid");
+
+			SetUser(Usr);
+			Response.Redirect("~/Default.aspx");
 		}
 	}
 }

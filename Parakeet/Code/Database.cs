@@ -308,6 +308,10 @@ namespace Parakeet.Code {
 		public string FileName {
 			get; set;
 		}
+
+		public string Tags {
+			get; set;
+		}
 	}
 
 	public enum ContentIDType : int {

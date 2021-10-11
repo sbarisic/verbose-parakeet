@@ -1,5 +1,4 @@
-﻿using Parakeet.Code;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -22,15 +21,21 @@ namespace Parakeet {
 			}));
 
 
-			if (Page.CheckLoggedIn()) {
+			if (Page.CheckLoggedIn(out ParakeetUser Usr)) {
 				EmitControl(PkCustomControl.MarginLeft(2));
-				EmitControl(new PkButton("View Profile - Complicated Username", PkButtonStyle.Light, (S, E) => {
+				EmitControl(new PkButton("View Profile - " + Usr.Username, PkButtonStyle.Success, (S, E) => {
 					Response.Redirect("~/Profile.aspx");
 				}));
 
 				EmitControl(PkCustomControl.MarginLeft(2));
-				EmitControl(new PkButton("Upload Content", PkButtonStyle.Light, (S, E) => {
+				EmitControl(new PkButton("Upload Content", PkButtonStyle.Warning, (S, E) => {
 					Response.Redirect("~/UploadContent.aspx");
+				}));
+
+				EmitControl(PkCustomControl.MarginLeft(2));
+				EmitControl(new PkButton("Logout", PkButtonStyle.Danger, (S, E) => {
+					Page.SetUser(null);
+					Response.Redirect("~/Default.aspx");
 				}));
 			} else {
 				EmitControl(PkCustomControl.MarginLeft(2));

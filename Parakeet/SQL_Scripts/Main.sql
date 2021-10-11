@@ -15,4 +15,4 @@ create table ContentID (
 	FileName VARCHAR(512)
 );
 
-select * from ContentID;
+alter table ContentID add Tags VARCHAR(512) null; 

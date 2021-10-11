@@ -21,7 +21,13 @@ namespace Parakeet {
 		}
 
 		protected void btnRegister_Click(object sender, EventArgs e) {
+			string Username = tbUsername.Text;
+			string Password = tbPassword.Text;
+			string Password2 = tbPassword2.Text;
 
+			if (Password != Password2) {
+
+			}
 		}
 	}
 }

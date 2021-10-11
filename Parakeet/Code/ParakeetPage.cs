@@ -21,8 +21,8 @@ namespace Parakeet.Code {
 			Session[nameof(ParakeetUser)] = User;
 		}
 
-		public bool CheckLoggedIn() {
-			ParakeetUser U = GetUser();
+		public bool CheckLoggedIn(out ParakeetUser U) {
+			U = GetUser();
 
 			if (U != null) {
 				PkUser = U;
@@ -30,6 +30,10 @@ namespace Parakeet.Code {
 			}
 
 			return false;
+		}
+
+		public bool CheckLoggedIn() {
+			return CheckLoggedIn(out ParakeetUser Usr);
 		}
 
 		public void Download(string FileName, byte[] Data) {
