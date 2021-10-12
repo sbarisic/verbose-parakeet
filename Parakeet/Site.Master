@@ -13,6 +13,8 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.6.2/plyr.min.js" integrity="sha512-5HcOw3x/g3GAUpNNyvKYB2/f8ivVNBVebdqCxz3Mmdftx7vXOdbYvonB2Det6RVcA1IDxYeYWTAzxRg+c6uvYQ==" crossorigin="anonymous"></script>
 	<%--<script src="Scripts/MonthPicker.js"></script>--%>
+	<script src="Scripts/typeahead.bundle.js"></script>
+	<script src="Scripts/bootstrap-tagsinput.js"></script>
 	<script src="Scripts/Site.js"></script>
 
 	<asp:PlaceHolder runat="server">
@@ -67,8 +69,13 @@
 				<ul id="ulNavbarItems" class="navbar-nav mr-auto" runat="server">
 				</ul>
 
-				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				<div class="mr-sm-2">
+					<%--<input id="inSearchText" class="form-control" type="search" placeholder="Search" aria-label="Search" data-role="tagsinput" runat="server">--%>
+
+					<asp:TextBox id="inSearchText" CssClass="form-control" type="search" placeholder="Search" aria-label="Search" data-role="tagsinput"  runat="server" />
+				</div>
+
+				<asp:Button CssClass="btn btn-outline-success my-2 my-sm-0" Text="Search" runat="server" OnClick="Search_Click"/>
 			</div>
 		</div>
 

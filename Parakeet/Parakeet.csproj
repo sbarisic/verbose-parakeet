@@ -126,6 +126,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-tagsinput.css" />
     <Content Include="Content\Images\missing.png" />
     <Content Include="Content\Images\wallpaper.png" />
     <Content Include="Content\Site.css" />
@@ -145,6 +146,8 @@
     <Content Include="DataFolder\Image\tulips.png" />
     <Content Include="Register.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Scripts\bootstrap-tagsinput.js" />
+    <Content Include="Scripts\typeahead.bundle.js" />
     <Content Include="UploadContent.aspx" />
     <Content Include="Profile.aspx" />
     <Content Include="Default.aspx" />

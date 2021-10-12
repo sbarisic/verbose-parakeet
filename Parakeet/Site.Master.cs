@@ -59,5 +59,9 @@ namespace Parakeet {
 		void EmitControl(PkControl WebCtrl) {
 			ulNavbarItems.Controls.Add(WebCtrl.GenerateNavbar());
 		}
+
+		protected void Search_Click(object sender, EventArgs e) {
+			string[] Tags = inSearchText.Text.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+		}
 	}
 }
