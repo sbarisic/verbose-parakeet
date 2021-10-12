@@ -16,3 +16,9 @@ create table ContentID (
 );
 
 alter table ContentID add Tags VARCHAR(512) null; 
+
+
+/
+
+
+select * from ParakeetUser;

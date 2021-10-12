@@ -25,15 +25,12 @@ namespace Parakeet {
 			bool RememberMe = cbRememberMe.Checked;
 
 			ParakeetUser Usr = ParakeetDb.Select<ParakeetUser>(new DbFilter("Username", Username)).First();
-			bool Valid = Usr != null;
 
-			if (Valid && PasswordManager.IsValidPassword(Password, Usr.Salt, Usr.Hash)) {
-				Valid = true;
-			} else
-				Valid = false;
+			if (Usr == null)
+				ThrowInvalidUserOrPass();
 
-			if (!Valid)
-				throw new Exception("User or password invalid");
+			if (!PasswordManager.IsValidPassword(Password, Usr.Salt, Usr.Hash))
+				ThrowInvalidUserOrPass();
 
 			SetUser(Usr);
 			Response.Redirect("~/Default.aspx");

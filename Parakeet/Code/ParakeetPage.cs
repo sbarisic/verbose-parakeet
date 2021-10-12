@@ -47,5 +47,9 @@ namespace Parakeet.Code {
 		public virtual IEnumerable<PkControl> GenerateWebControls() {
 			yield break;
 		}
+
+		public void ThrowInvalidUserOrPass() {
+			throw new Exception("Invalid username or password");
+		}
 	}
 }

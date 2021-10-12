@@ -13,7 +13,12 @@ using Parakeet.Code;
 namespace Parakeet {
 	public partial class _Default : ParakeetPage {
 		protected void Page_Load(object sender, EventArgs e) {
-			ParakeetUser Admin = ParakeetDb.Select<ParakeetUser>(new DbFilter("Username", "admin")).First();
+			ParakeetUser User = null;
+
+			if (!CheckLoggedIn(out User)) {
+				Response.Redirect("~/Login.aspx");
+				return;
+			}
 
 			ContentItem[] Items = ParakeetDb.Select<ContentID>().Select(CID => new ContentItem(CID)).ToArray();
 
