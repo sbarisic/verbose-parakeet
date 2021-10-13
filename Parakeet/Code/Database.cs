@@ -312,6 +312,21 @@ namespace Parakeet.Code {
 		public string Tags {
 			get; set;
 		}
+
+		public bool HasTags(string[] Tags) {
+			if (Tags == null)
+				return true;
+
+			string[] ParsedTags = this.Tags?.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries) ?? new string[] { };
+
+			for (int i = 0; i < Tags.Length; i++) {
+				if (!ParsedTags.Contains(Tags[i])) {
+					return false;
+				}
+			}
+
+			return true;
+		}
 	}
 
 	public enum ContentIDType : int {

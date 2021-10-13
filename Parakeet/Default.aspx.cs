@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Reflection;
 using Parakeet.Code;
@@ -20,12 +21,13 @@ namespace Parakeet {
 				return;
 			}
 
-			ContentItem[] Items = ParakeetDb.Select<ContentID>().Select(CID => new ContentItem(CID)).ToArray();
+			NameValueCollection QS = Request.QueryString;
+			string[] Tags = (QS.Get("tags") ?? "").Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
 
-			int OldLength = Items.Length;
-			Array.Resize(ref Items, OldLength * 2);
-			Array.Copy(Items, 0, Items, OldLength, OldLength);
+			if (Tags.Length == 0)
+				Tags = null;
 
+			ContentItem[] Items = ParakeetDb.Select<ContentID>().Where(CID => CID.HasTags(Tags)).Select(CID => new ContentItem(CID)).ToArray();
 			rptImages.DataSource = Items;
 			rptImages.DataBind();
 		}
