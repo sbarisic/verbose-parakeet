@@ -64,6 +64,14 @@ textarea {
 	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
 }
 
+.thumb-maxsize {
+	display: block;
+	max-width: 300px;
+	max-height: 300px;
+	width: auto;
+	height: auto;
+}
+
 .thumb-figcaption {
 }
 

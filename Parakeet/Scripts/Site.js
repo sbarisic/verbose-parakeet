@@ -20,3 +20,10 @@ function PageMethodSuccess(res, ctx) {
 function PageMethodError(res) {
 	console.log("Page method error!" + res);
 }
+
+function onFileBrowse(e) {
+	var imgPreview = document.getElementById("MainContent_imgPreview");
+	imgPreview.src = URL.createObjectURL(e.target.files[0]);
+
+	document.getElementById("MainContent_btnUpload").disabled = false;
+}

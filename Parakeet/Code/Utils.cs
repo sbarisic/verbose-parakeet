@@ -39,5 +39,9 @@ namespace Parakeet.Code {
 		public static void SaveFile(string FileName, byte[] Bytes) {
 
 		}
+
+		public static HashSet<string> ParseTags(string Text) {
+			return new HashSet<string>(Text.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(T => T.Trim()));
+		}
 	}
 }

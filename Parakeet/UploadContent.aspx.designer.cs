@@ -13,6 +13,15 @@ namespace Parakeet {
 	public partial class UploadContent {
 
 		/// <summary>
+		/// inTags control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox inTags;
+
+		/// <summary>
 		/// fileUpload control.
 		/// </summary>
 		/// <remarks>
@@ -29,6 +38,15 @@ namespace Parakeet {
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.Button btnUpload;
+
+		/// <summary>
+		/// imgPreview control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Image imgPreview;
 
 		/// <summary>
 		/// divInfo control.

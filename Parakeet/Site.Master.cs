@@ -61,7 +61,7 @@ namespace Parakeet {
 		}
 
 		protected void Search_Click(object sender, EventArgs e) {
-			HashSet<string> Tags = new HashSet<string>(inSearchText.Text.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(T=>T.Trim()));
+			HashSet<string> Tags = Utils.ParseTags(inSearchText.Text);
 
 			Response.Redirect("~/Default.aspx?tags=" + string.Join(",", Tags.ToArray()));
 		}

@@ -50,7 +50,7 @@ namespace Parakeet {
 				return;
 			}
 
-
+			HashSet<string> Tags = Utils.ParseTags(inTags.Text);
 		}
 
 		/*public override IEnumerable<PkControl> GenerateWebControls() {
