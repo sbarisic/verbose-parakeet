@@ -28,6 +28,10 @@ namespace Parakeet {
 			lblInfo.Text = Msg;
 		}
 
+		void Clear() {
+			inTags.Text = "";
+		}
+
 		protected void btnUpload_Click(object sender, EventArgs e) {
 			if (!fileUpload.HasFile) {
 				PrintMessage("File was not attached");
@@ -35,8 +39,9 @@ namespace Parakeet {
 			}
 
 			byte[] Bytes = fileUpload.FileBytes;
-			string Name = fileUpload.FileName;
-			string Ext = Path.GetExtension(Name).ToLower();
+			string Name = Files.GetFileName(fileUpload.FileName);
+			string Ext = Path.GetExtension(fileUpload.FileName).ToLower();
+			string NewName = Files.GenFileName(Ext);
 
 			string[] Formats = new[] { ".jpg", ".png", ".gif" };
 
@@ -51,6 +56,19 @@ namespace Parakeet {
 			}
 
 			HashSet<string> Tags = Utils.ParseTags(inTags.Text);
+			Tags.Add(Name);
+			Files.SaveImageFile(NewName, Bytes);
+
+			ContentID Content = new ContentID();
+			Content.ContentType = ContentIDType.Image;
+			Content.Name = Name;
+			Content.OwnerID = User.ID;
+			Content.Tags = Utils.JoinTags(Tags);
+			Content.FileName = NewName;
+			ParakeetDb.Insert(Content);
+
+			Clear();
+			PrintMessage("Upload success!");
 		}
 
 		/*public override IEnumerable<PkControl> GenerateWebControls() {

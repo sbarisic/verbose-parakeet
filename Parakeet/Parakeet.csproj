@@ -148,6 +148,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Scripts\bootstrap-tagsinput.js" />
     <Content Include="Scripts\typeahead.bundle.js" />
+    <Content Include="View.aspx" />
     <Content Include="UploadContent.aspx" />
     <Content Include="Profile.aspx" />
     <Content Include="Default.aspx" />
@@ -216,6 +217,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View.aspx.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View.aspx.designer.cs">
+      <DependentUpon>View.aspx</DependentUpon>
     </Compile>
     <Compile Include="UploadContent.aspx.cs">
       <DependentUpon>UploadContent.aspx</DependentUpon>

@@ -10,8 +10,6 @@ using System.Web.UI.HtmlControls;
 
 namespace Parakeet.Code {
 	public static class Utils {
-		static string DataFolder = "";
-
 		public static object ToEnum(int Value, Type EnumType) {
 			return Enum.Parse(EnumType, Value.ToString());
 		}
@@ -36,12 +34,12 @@ namespace Parakeet.Code {
 			return SW.ToString();
 		}
 
-		public static void SaveFile(string FileName, byte[] Bytes) {
-
-		}
-
 		public static HashSet<string> ParseTags(string Text) {
 			return new HashSet<string>(Text.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(T => T.Trim()));
+		}
+
+		public static string JoinTags(HashSet<string> Tags) {
+			return string.Join(",", Tags.ToArray());
 		}
 	}
 }

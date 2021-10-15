@@ -18,5 +18,9 @@ namespace Parakeet.Controls {
 		protected void Page_Load(object sender, EventArgs e) {
 			// ~/Content/Images/missing.png
 		}
+
+		protected void btnName_Click(object sender, EventArgs e) {
+
+		}
 	}
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Configuration;
+using System.IO;
 
 namespace Parakeet.Code {
 	public static class Cfg {
@@ -10,15 +11,21 @@ namespace Parakeet.Code {
 			return ConfigurationManager.AppSettings[Key];
 		}
 
+		public static string RootDir {
+			get {
+				return GetKey(nameof(RootDir));
+			}
+		}
+
 		public static string VideoDir {
 			get {
-				return GetKey(nameof(VideoDir));
+				return RootDir + "/" + GetKey(nameof(VideoDir));
 			}
 		}
 
 		public static string ImageDir {
 			get {
-				return GetKey(nameof(ImageDir));
+				return RootDir + "/" + GetKey(nameof(ImageDir));
 			}
 		}
 

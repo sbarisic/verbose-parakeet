@@ -9,10 +9,7 @@
 			<%--<figcaption class="figure-caption text-center thumb-figcaption"><%# Name %></figcaption>--%>
 
 			<div class="btn-group btn-group-toggle" data-toggle="buttons">
-				<label class="btn btn-sm btn-secondary active">
-					<input type="radio" name="options" id="option1" autocomplete="off" checked>
-					<%# Name %>
-				</label>
+				<asp:Button ID="btnName" CssClass="btn btn-sm btn-secondary active" Text="<%# Name %>" OnClick="btnName_Click" runat="server" />
 
 				<div class="btn-group">
 					<button type="button" class="btn btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

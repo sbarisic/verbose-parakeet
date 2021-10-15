@@ -44,16 +44,16 @@ namespace Parakeet {
 
 		public ContentItem(ContentID CID) {
 			Name = CID.Name;
-
-			string RootFolder = "~/DataFolder/";
+			string RootFolder;
 
 			if (CID.ContentType == ContentIDType.Image) {
-				RootFolder += "Image/";
+				RootFolder = Cfg.ImageDir;
 			} else if (CID.ContentType == ContentIDType.Video) {
-				RootFolder += "Video/";
+				RootFolder = Cfg.VideoDir;
 			} else
 				throw new Exception();
 
+			RootFolder += "/";
 			FilePath = string.Format(RootFolder + CID.FileName);
 		}
 	}
